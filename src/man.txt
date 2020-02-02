@@ -1,0 +1,29 @@
+***************************************************************
+Info: Program to encrypt and decrypt plaintext with private key
+
+Compiling: gcc opt.c helper.c crypt.c main.c -o crypto26
+		   OR
+	   sudo make (UNIX only!)
+
+Usage: ./crypto26 [OPTIONS]
+	   OR
+	crypto26 [OPTIONS]
+
+Examples: 
+	Encryption: crypto26 -e -text "Hello World" -key "mykey"
+	Decyption: crypto26 -d -f matrix.txt -c ciphertext.txt -k "mykey"
+
+Note: Do not forget to specify file names of encryption table and cipher text in case of Decryption!
+      Do not write letters and non-letters together, otherwise, the answer in decryption will be wrong!
+      Running in UNIX System is prefereable.
+      Filenames for options -f and -c should be taken from outputs folder generated while encyption.
+
+Options:
+
+    [-t |-text <sign-text>]       	Specifies the text which will be encrypted or decrypted.
+    [-k | -key <private-key>]      	Private Key
+    [-d or -e]      			Encryption or Decryption
+    [-f | -table <filename>]        	File name of encryption table - default: matrix.txt (Mandatory for Decryption!) 
+    [-c | -ciphertext <filename>]	Name of file which contains ciphertext - default: ciphertext.txt (Mandatory for Decryption!)
+    
+    [-h | -help]          		Prints usage information
